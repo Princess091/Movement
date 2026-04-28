@@ -40,10 +40,8 @@ void loop() {
 digitalWrite(IN1_a, HIGH);
 digitalWrite(IN2_a, LOW);
 
-i = EnA;
-
   for(i=180; i<=255; i++){
-    digitalWrite(i, HIGH);
+    digitalWrite(EnA, i);
   }
 
 delay(500);
