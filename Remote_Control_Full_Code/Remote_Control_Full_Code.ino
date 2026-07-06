@@ -170,7 +170,7 @@ void loop()
     }
 
     // Backward
-    else if (ch2 < 1400 && ch1 < 1450 && ch2 > 1600)
+    else if (ch2 < 1400 && ch1 > 1400 && ch2 < 1600)
     {
         backward(speed);
     }
