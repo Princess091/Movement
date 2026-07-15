@@ -164,39 +164,39 @@ void loop()
     Serial.println(ch2);
 
     // Forward
-    if (ch2 > 1600 && ch1 > 1400 && ch1 < 1600)
+    if (ch2 > 1600 && ch1 >= 1400 && ch1 <= 1600)
     {
-        forward(speed);
+        forward(200);
     }
 
     // Backward
-    else if (ch2 < 1400 && ch1 > 1400 && ch2 < 1600)
+    else if (ch2 < 1400 && ch1 >= 1400 && ch2 <= 1600)
     {
-        backward(speed);
+        backward(200);
     }
 
     // Diagonal Front Right
     else if (ch2 > 1600 && ch1 > 1600)
     {
-        diagonalFrontRight(speed);
+        diagonalFrontRight(200);
     }
 
     // Diagonal Front Left
     else if (ch2 > 1600 && ch1 < 1400)
     {
-        diagonalFrontLeft(speed);
+        diagonalFrontLeft(200);
     }
 
     // Diagonal Back Right
     else if (ch2 < 1400 && ch1 > 1600)
     {
-        diagonalBackRight(speed);
+        diagonalBackRight(200);
     }
 
     // Diagonal Back Left
     else if (ch2 < 1400 && ch1 < 1400)
     {
-        diagonalBackLeft(speed);
+        diagonalBackLeft(200);
     }
 
     // Stop
