@@ -139,70 +139,100 @@ void driveBTS(int RPWM, int LPWM, int speed){
 }
 
 
-// STOP
-
-void stopRobot(){
-  driveBTS(D1_RPWM, D1_LPWM, 0);
-  driveBTS(D2_RPWM, D2_LPWM, 0);
-}
-
-
-// FORWARD
-
 void forward(int speed){
   driveBTS(D1_RPWM, D1_LPWM, speed);
-  driveBTS(D2_RPWM, D2_LPWM, speed);
-}
-
-
-// BACKWARD
-
-void backward(int speed)
-{
-  driveBTS(D1_RPWM, D1_LPWM, -speed);
   driveBTS(D2_RPWM, D2_LPWM, -speed);
 }
 
-
-// DIAGONAL FRONT RIGHT
-
-// FR + RL → Forward
-// FL + RR → Stop
+void backward(int speed){
+  driveBTS(D1_RPWM, D1_LPWM, -speed);
+  driveBTS(D2_RPWM, D2_LPWM, speed);
+}
 
 void diagonalFrontRight(int speed){
   driveBTS(D1_RPWM, D1_LPWM, speed);
   driveBTS(D2_RPWM, D2_LPWM, 0);
 }
 
-
-// DIAGONAL FRONT LEFT
-
-// FL + RR → Forward
-// FR + RL → Stop
-
 void diagonalFrontLeft(int speed){
   driveBTS(D1_RPWM, D1_LPWM, 0);
-  driveBTS(D2_RPWM, D2_LPWM, speed);
+  driveBTS(D2_RPWM, D2_LPWM, -speed);
 }
-
-
-// DIAGONAL BACK RIGHT
-
-// FR + RL → Backward
-// FL + RR → Stop
 
 void diagonalBackRight(int speed){
   driveBTS(D1_RPWM, D1_LPWM, -speed);
   driveBTS(D2_RPWM, D2_LPWM, 0);
 }
 
-
-// DIAGONAL BACK LEFT
-
-// FL + RR → Backward
-// FR + RL → Stop
-
 void diagonalBackLeft(int speed){
   driveBTS(D1_RPWM, D1_LPWM, 0);
-  driveBTS(D2_RPWM, D2_LPWM, -speed);
+  driveBTS(D2_RPWM, D2_LPWM, speed);
 }
+
+// // STOP
+
+// void stopRobot(){
+//   driveBTS(D1_RPWM, D1_LPWM, 0);
+//   driveBTS(D2_RPWM, D2_LPWM, 0);
+// }
+
+
+// // FORWARD
+
+// void forward(int speed){
+//   driveBTS(D1_RPWM, D1_LPWM, speed);
+//   driveBTS(D2_RPWM, D2_LPWM, speed);
+// }
+
+
+// // BACKWARD
+
+// void backward(int speed)
+// {
+//   driveBTS(D1_RPWM, D1_LPWM, -speed);
+//   driveBTS(D2_RPWM, D2_LPWM, -speed);
+// }
+
+
+// // DIAGONAL FRONT RIGHT
+
+// // FR + RL → Forward
+// // FL + RR → Stop
+
+// void diagonalFrontRight(int speed){
+//   driveBTS(D1_RPWM, D1_LPWM, speed);
+//   driveBTS(D2_RPWM, D2_LPWM, 0);
+// }
+
+
+// // DIAGONAL FRONT LEFT
+
+// // FL + RR → Forward
+// // FR + RL → Stop
+
+// void diagonalFrontLeft(int speed){
+//   driveBTS(D1_RPWM, D1_LPWM, 0);
+//   driveBTS(D2_RPWM, D2_LPWM, speed);
+// }
+
+
+// // DIAGONAL BACK RIGHT
+
+// // FR + RL → Backward
+// // FL + RR → Stop
+
+// void diagonalBackRight(int speed){
+//   driveBTS(D1_RPWM, D1_LPWM, -speed);
+//   driveBTS(D2_RPWM, D2_LPWM, 0);
+// }
+
+
+// // DIAGONAL BACK LEFT
+
+// // FL + RR → Backward
+// // FR + RL → Stop
+
+// void diagonalBackLeft(int speed){
+//   driveBTS(D1_RPWM, D1_LPWM, 0);
+//   driveBTS(D2_RPWM, D2_LPWM, -speed);
+// }
