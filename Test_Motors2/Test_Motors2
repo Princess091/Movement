@@ -1,0 +1,61 @@
+const int D1_RPWM = 5;
+const int D1_LPWM = 6;
+const int D1_REN  = 7;
+const int D1_LEN  = 8;
+
+const int D2_RPWM = 9;
+const int D2_LPWM = 10;
+const int D2_REN  = 11;
+const int D2_LEN  = 12;
+
+void setup() {
+
+  pinMode(D1_RPWM, OUTPUT);
+  pinMode(D1_LPWM, OUTPUT);
+  pinMode(D1_REN, OUTPUT);
+  pinMode(D1_LEN, OUTPUT);
+
+  pinMode(D2_RPWM, OUTPUT);
+  pinMode(D2_LPWM, OUTPUT);
+  pinMode(D2_REN, OUTPUT);
+  pinMode(D2_LEN, OUTPUT);
+
+  digitalWrite(D1_REN, HIGH);
+  digitalWrite(D1_LEN, HIGH);
+
+  digitalWrite(D2_REN, HIGH);
+  digitalWrite(D2_LEN, HIGH);
+}
+
+void loop() {
+
+  // DRIVER 1
+  analogWrite(D1_RPWM, 150);
+  analogWrite(D1_LPWM, 0);
+
+  analogWrite(D2_RPWM, 0);
+  analogWrite(D2_LPWM, 0);
+
+  delay(3000);
+
+  // STOP
+  analogWrite(D1_RPWM, 0);
+  analogWrite(D1_LPWM, 0);
+
+  delay(1000);
+
+  // DRIVER 2
+  analogWrite(D1_RPWM, 0);
+  analogWrite(D1_LPWM, 0);
+
+  analogWrite(D2_RPWM, 150);
+  analogWrite(D2_LPWM, 0);
+
+  delay(3000);
+
+  // STOP
+  analogWrite(D2_RPWM, 0);
+  analogWrite(D2_LPWM, 0);
+
+  delay(1000);
+}
