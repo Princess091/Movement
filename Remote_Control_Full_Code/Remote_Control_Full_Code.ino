@@ -140,41 +140,59 @@ void driveBTS(int RPWM, int LPWM, int speed){
 
 
 void forward(int speed){
-  driveBTS(D1_RPWM, D1_LPWM, speed);
-  driveBTS(D2_RPWM, D2_LPWM, -speed);
+  analogWrite(D1_RPWM, speed);
+  analogWrite(D1_LPWM, 0);
+
+  analogWrite(D2_RPWM, speed);
+  analogWrite(D2_LPWM, 0);
 }
 
 void backward(int speed){
-  driveBTS(D1_RPWM, D1_LPWM, -speed);
-  driveBTS(D2_RPWM, D2_LPWM, speed);
+  analogWrite(D1_RPWM, 0);
+  analogWrite(D1_LPWM, speed);
+
+  analogWrite(D2_RPWM, 0);
+  analogWrite(D2_LPWM, speed);
 }
 
 void diagonalFrontRight(int speed){
-  driveBTS(D1_RPWM, D1_LPWM, speed);
-  driveBTS(D2_RPWM, D2_LPWM, 0);
+  analogWrite(D1_RPWM, 0);
+  analogWrite(D1_LPWM, 0);
+
+  analogWrite(D2_RPWM, speed);
+  analogWrite(D2_LPWM, 0);
 }
 
 void diagonalFrontLeft(int speed){
-  driveBTS(D1_RPWM, D1_LPWM, 0);
-  driveBTS(D2_RPWM, D2_LPWM, -speed);
+  analogWrite(D1_RPWM, speed);
+  analogWrite(D1_LPWM, 0);
+
+  analogWrite(D2_RPWM, 0);
+  analogWrite(D2_LPWM, 0);
 }
 
 void diagonalBackRight(int speed){
-  driveBTS(D1_RPWM, D1_LPWM, -speed);
-  driveBTS(D2_RPWM, D2_LPWM, 0);
+  analogWrite(D1_RPWM, 0);
+  analogWrite(D1_LPWM, 0);
+
+  analogWrite(D2_RPWM, 0);
+  analogWrite(D2_LPWM, 150);
 }
 
 void diagonalBackLeft(int speed){
-  driveBTS(D1_RPWM, D1_LPWM, 0);
-  driveBTS(D2_RPWM, D2_LPWM, speed);
+  analogWrite(D1_RPWM, 0);
+  analogWrite(D1_LPWM, 150);
+
+  analogWrite(D2_RPWM, 0);
+  analogWrite(D2_LPWM, 0);
 }
 
-// // STOP
+// STOP
 
-// void stopRobot(){
-//   driveBTS(D1_RPWM, D1_LPWM, 0);
-//   driveBTS(D2_RPWM, D2_LPWM, 0);
-// }
+void stopRobot(){
+  driveBTS(D1_RPWM, D1_LPWM, 0);
+  driveBTS(D2_RPWM, D2_LPWM, 0);
+}
 
 
 // // FORWARD
