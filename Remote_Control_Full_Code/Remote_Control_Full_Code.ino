@@ -117,7 +117,7 @@ void loop(){
 // =====================================================
 
 void driveBTS(int RPWM, int LPWM, int speed){
-  speed = constrain(speed, -255, 255);
+  speed = constrain(speed, 0, 255);
 
   if (speed > 0){
     // Forward
